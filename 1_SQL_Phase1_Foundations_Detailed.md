@@ -1563,23 +1563,4 @@ Conditional   : CASE WHEN ... THEN ... ELSE ... END
 Cast          : CAST(x AS type)
 ```
 
-## G.3 Self-Test Questions (Answer Without Looking)
 
-1. What is the difference between `DELETE`, `TRUNCATE`, and `DROP`?
-2. Why does `SELECT * FROM t WHERE x = NULL` return nothing?
-3. In what order does SQL execute `WHERE`, `SELECT`, `ORDER BY`, and `GROUP BY`?
-4. What does `COUNT(salary)` return if 1 of 8 salaries is NULL?
-5. Why can `NOT IN` return zero rows unexpectedly?
-6. Difference between `WHERE` and `HAVING`? (Preview for Phase 2.)
-7. What is the difference between a primary key and a unique key?
-8. What does ACID stand for?
-9. What are 1NF, 2NF, and 3NF in one line each?
-10. Why can `WHERE YEAR(date_col) = 2023` be slow?
-
-## G.4 What to Do Next
-
-1. Create the sample tables from Part C in MySQL or PostgreSQL (online options: DB Fiddle, SQLite Online, or a local install).
-2. Run **every** example in this guide yourself and compare with the outputs shown.
-3. Solve all practice problems without looking at the answers.
-4. Solve 15 to 20 **Easy** problems on LeetCode (Database), HackerRank, or DataLemur that use `SELECT`, `WHERE`, `ORDER BY`, `CASE`, and NULL handling.
-5. When you are comfortable, say **"Start Phase 2"** and we will move to **Aggregation, Joins, and Set Operations** in the same detailed style.
