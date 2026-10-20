@@ -315,6 +315,3 @@
 
 ---
 
-## Next Step
-
-Start with **Phase 1, Module 1**. When you are ready, tell me and I will teach it in full detail, with concepts, templates, worked examples, and graded practice problems.
