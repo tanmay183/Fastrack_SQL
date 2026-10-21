@@ -1897,38 +1897,3 @@ PATTERNS
  Distinct running cnt : first-seen flag (ROW_NUMBER = 1) + running SUM
 ```
 
-## 4.4 Self-Test Questions
-
-1. What is the difference between `GROUP BY` and a window function?
-2. What do `PARTITION BY` and `ORDER BY` do inside `OVER`?
-3. Differences between `ROW_NUMBER`, `RANK`, and `DENSE_RANK` for values 100, 90, 90, 80?
-4. Why can't you write a window function in `WHERE`, and what is the workaround?
-5. What is the default frame when `ORDER BY` is present? When it is absent?
-6. Why does `LAST_VALUE` often return the current row's value, and how do you fix it?
-7. `ROWS` vs `RANGE`: what changes when there are ties?
-8. How do you compute a 7-day moving average? What goes wrong if some dates are missing?
-9. Explain the gaps-and-islands trick (`date - ROW_NUMBER()`) in your own words.
-10. How would you sessionize events with a 30-minute inactivity timeout?
-11. How do you find the median without `PERCENTILE_CONT`?
-12. How do you compute a cumulative count of **distinct** users?
-13. Why must you add a unique tie-breaker to `ROW_NUMBER`'s `ORDER BY`?
-14. Which of `RANK` / `DENSE_RANK` / `ROW_NUMBER` would you use for "3rd highest salary" and why?
-
-## 4.5 LeetCode / Practice Checklist
-
-Solve these (Database section), roughly in this order:
-
-| Level | Problems |
-|---|---|
-| Medium | Second Highest Salary, Nth Highest Salary, Rank Scores, Consecutive Numbers, Department Top Three Salaries, Delete Duplicate Emails, Exchange Seats, Last Person to Fit in the Bus, Game Play Analysis III, Consecutive Available Seats |
-| Hard / Medium-Hard | Human Traffic of Stadium, Report Contiguous Dates, Active Users (consecutive-day streak), Median Employee Salary, Find Median Given Frequency of Numbers |
-
-Also practice on **StrataScratch** and **DataLemur** using the filters "window function" and "rank".
-
-## 4.6 What to Do Next
-
-1. Create all tables from Part 1 and run **every** query. Compare your output with the tables in this guide.
-2. Re-solve each pattern **from memory** (template first, then the full query).
-3. For each problem you solve, write the **tie behavior** and **NULL behavior** in your error log.
-4. Solve 25 to 30 window-function problems (mix of Medium and Hard).
-5. When ready, say **"Start Phase 5"** for **Date, Time and Analytics Patterns** (retention, cohorts, funnels, DAU/MAU, overlapping intervals). If you still want the earlier gap filled, say **"Start Phase 2"** for **Aggregation, Joins and Set Operations**.
