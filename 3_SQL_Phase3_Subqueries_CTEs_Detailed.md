@@ -1627,25 +1627,3 @@ PATTERNS
   Graph paths                     -> recursive CTE + hop limit
 ```
 
-## 4.3 Self-Test Questions
-
-1. What is the difference between a correlated and a non-correlated subquery?
-2. Why must a subquery in `FROM` have an alias?
-3. Why does `NOT IN` fail when the subquery returns a NULL, and how do you fix it?
-4. What is the difference between `> ANY` and `> ALL`?
-5. When would you choose `EXISTS` over `IN`?
-6. How do you find the 3rd highest salary when duplicates exist?
-7. What are the two parts of a recursive CTE and what does each do?
-8. How do you prevent a recursive CTE from looping forever?
-9. How do you walk up a hierarchy instead of down?
-10. Is a CTE faster than a subquery? Explain.
-11. How would you list every date in a month even when there are no sales on some days?
-12. Why might a correlated subquery be slow on a billion-row table, and what are two alternatives?
-
-## 4.4 What to Do Next
-
-1. Create all tables from Part 1 and run **every** query in this guide. Compare your output with the tables shown.
-2. Solve all practice problems without looking at the answers, then compare.
-3. Practice on LeetCode (Database): *Second Highest Salary*, *Nth Highest Salary*, *Employees Earning More Than Their Managers*, *Customers Who Never Order*, *Department Highest Salary*, *Rank Scores*, *Human Traffic of Stadium* (medium/hard), *Find the Missing Dates* style problems.
-4. Rewrite each correlated subquery you wrote as (a) a CTE + join and (b) a window function (after Phase 4).
-5. When you are ready, say **"Start Phase 4"** for **Window Functions**, the most important interview module. If you want to fill the gap first, say **"Start Phase 2"** for Aggregation, Joins and Set Operations.
