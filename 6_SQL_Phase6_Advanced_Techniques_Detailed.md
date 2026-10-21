@@ -1864,38 +1864,4 @@ ORDER BY b.m, b.customer_id;
 ```
 </details>
 
-## 4.4 Self-Test Questions
 
-1. What problem does `LATERAL` / `CROSS APPLY` solve that a normal join cannot?
-2. Difference between `JOIN LATERAL ... ON TRUE` and `LEFT JOIN LATERAL ... ON TRUE`?
-3. How would you split `'a,b,c'` into three rows in MySQL, PostgreSQL and Spark?
-4. Why is a comma-separated column a design problem, and what is the proper design?
-5. What is the difference between `->` and `->>` for JSON? What does a missing key return?
-6. How do you keep events with an empty JSON array when exploding it?
-7. Write a regex to validate a simple email and explain each part.
-8. Write an upsert in MySQL, PostgreSQL, and with `MERGE`. What does "idempotent" mean for a load?
-9. Delete duplicate rows keeping the smallest id: give two different solutions.
-10. What is relational division? Why must you use `COUNT(DISTINCT ...)`?
-11. How do you find "customers who bought A and B but not C" in one query?
-12. Why do you add edges in both directions for an undirected graph?
-13. Explain the three joins in the friend-recommendation query.
-14. How do you build a football table from a one-row-per-match table?
-15. How does the sweep-line technique find the maximum number of overlapping meetings? Why do ends sort before starts at equal times?
-16. Why can't you just add up each meeting's duration to get total busy time?
-
-## 4.5 LeetCode / Practice Checklist
-
-| Level | Problems |
-|---|---|
-| Medium | Delete Duplicate Emails, Swap Salary, Customers Who Bought All Products, Find Users With Valid E-Mails, Patients With a Condition, Friend Requests II: Who Has the Most Friends, Team Scores in Football Tournament, Page Recommendations |
-| Hard | Tournament Winners, Human Traffic of Stadium (islands), Active Users (streaks), Report Contiguous Dates, meeting-rooms style overlap problems on StrataScratch / DataLemur, recursive-CTE graph questions |
-
-Also practice **JSON** and **regex** parsing questions in your target dialect (BigQuery, Snowflake, and Spark all have their own JSON and regex functions).
-
-## 4.6 What to Do Next
-
-1. Create all tables from Part 1 and run **every** query. Compare your output with the tables in this guide.
-2. For each pattern (P53 to P60), write the **skeleton from memory**, then fill in the details.
-3. Redo three flagship problems without looking: relational division (both methods), friend recommendations, and the sweep-line / merge-intervals pair.
-4. Do a **dialect pass**: rewrite 5 queries from this phase in PostgreSQL and in Spark SQL.
-5. When you are ready, say **"Start Phase 7"** for **Big Data SQL, Performance and Internals** (execution plans, indexes, join algorithms, partitioning, data skew, SCD types, Spark/Hive specifics, ACID and isolation levels). If you want the earlier gap filled first, say **"Start Phase 2"** for **Aggregation, Joins and Set Operations**.
