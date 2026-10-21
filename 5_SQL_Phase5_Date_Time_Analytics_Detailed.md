@@ -557,7 +557,7 @@ ORDER BY cohort_month, month_number;
 **Step-by-step (January cohort = customers 1, 2, 3):**
 - Month 0 (Jan): all 3 ordered, so 100%.
 - Month 1 (Feb): customers 1 and 2 ordered (3 did not), so 2/3 = **66.67%**.
-- Month 2 (Mar): customers 1 and 3 ordered, so 2/3 = **66.67%** (customer 2 came back? no; customer 3 returned after skipping Feb).
+- Month 2 (Mar): customers 1 and 3 ordered, so 2/3 = **66.67%** (customer 3 skipped February but returned in March; customer 2 did not return).
 - Month 3 (Apr): only customer 1, so 1/3 = **33.33%**.
 - February cohort (customer 4): active in Feb and Mar, absent in Apr.
 - Why `FIRST_VALUE`? Month 0's active users **equal the cohort size** (everyone is active in their first month), so it gives the denominator without another join.
@@ -1165,7 +1165,7 @@ WHERE WEEKDAY(c.d) < 5                                   -- Mon..Fri
 |---|
 | 8 |
 
-**Step-by-step:** 12 calendar days, 4 are weekend/holiday-free weekdays... in detail: 10 weekdays (Mon to Fri twice) minus 2 holidays that fall on weekdays = **8**.
+**Step-by-step:** the 12 calendar days contain 10 weekdays (Mon to Fri, twice). Both holidays (Thu 10-22 and Mon 10-26) fall on weekdays, so 10 - 2 = **8** business days.
 
 > **Interview note:** "Add N business days" and "business days between" are usually solved with a **calendar table** that has an `is_business_day` flag. In real systems, keep a permanent calendar (date dimension) table.
 
@@ -1585,7 +1585,7 @@ WHERE rn >= CEIL(0.90 * cnt);
 
 **Step-by-step:** `CEIL(0.9 * 12) = CEIL(10.8) = 11`. Row 11 is **700**.
 
-> **Why report medians and percentiles?** Means are distorted by outliers. For revenue, latency, and session length, the **median** (typical) and **p90/p95/p99** (tail) are the standard metrics. PostgreSQL offers `PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY amount)`, which interpolates (for these 12 values it returns 685, between the 10th and 11th values). Different methods give slightly different percentiles: say which one you use.
+> **Why report medians and percentiles?** Means are distorted by outliers. For revenue, latency, and session length, the **median** (typical) and **p90/p95/p99** (tail) are the standard metrics. PostgreSQL offers `PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY amount)`, which interpolates (for these 12 values it returns 695: position 1 + 0.9 x 11 = 10.9, so 650 + 0.9 x (700 - 650)). Different methods give slightly different percentiles: say which one you use.
 
 ---
 
