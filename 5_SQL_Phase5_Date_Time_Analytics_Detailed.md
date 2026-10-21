@@ -1846,37 +1846,3 @@ HAVING COUNT(*) >= 3;
 Check for problem 2: 2026-02-03 is a Tuesday (week starts Mon 02-02), 2026-02-14 is a Saturday (week starts Mon 02-09), 2026-02-18 is a Wednesday (week starts Mon 02-16).
 </details>
 
-## 4.5 Self-Test Questions
-
-1. Why should timestamp ranges be half-open (`>= start AND < next_start`)?
-2. How do you bucket dates by month so that sorting and joins stay correct?
-3. Why can `LAG` give a wrong month-over-month result, and how do you fix it?
-4. Define Day-1 retention precisely. Why do you need a `LEFT JOIN`?
-5. How do you build a cohort retention table? What does "month number" mean?
-6. How do you compute churn using a self-join? Why filter out the last month?
-7. Why can't you use `COUNT(DISTINCT user_id) OVER (...)` for rolling active users, and what is the alternative?
-8. Write the overlap condition for two date ranges. How do you avoid duplicate pairs?
-9. Why does merging intervals need a running `MAX(end_date)` instead of `LAG(end_date)`?
-10. How do you forward-fill missing values without `IGNORE NULLS`?
-11. What is the difference between AOV and revenue per customer?
-12. Explain `RANK` vs `DENSE_RANK` vs `ROW_NUMBER` for "top 3 customers."
-13. How do you compute a median without `PERCENTILE_CONT`? How does nearest-rank p90 differ from interpolated p90?
-14. How would you pivot rows to columns, and what is the limitation?
-15. How does a time zone change the answer to "daily active users"?
-
-## 4.6 LeetCode / Practice Checklist
-
-| Level | Problems |
-|---|---|
-| Medium | Game Play Analysis IV (Day-1 style retention), Monthly Transactions I, Trips and Users, User Activity for the Past 30 Days I, Restaurant Growth (7-day moving average), Active Users, Report Contiguous Dates |
-| Hard | Game Play Analysis V (retention by install date), Monthly Transactions II, Human Traffic of Stadium |
-
-Also practice on **StrataScratch** and **DataLemur** with tags like "retention", "cohort", "funnel", "DAU", "growth", "churn".
-
-## 4.7 What to Do Next
-
-1. Create all tables from Part 1 and run **every** query. Compare your output with the tables in this guide.
-2. For each pattern, **say the metric definition out loud first**, then write the query from memory.
-3. Re-solve the cohort retention query, the interval-merge query, and the funnel query **without looking**: these are the three most common "hard" analytics questions.
-4. Solve 25 to 30 problems tagged retention, funnel, growth, and date logic.
-5. When you are ready, say **"Start Phase 6"** for **Advanced Techniques** (lateral joins, JSON and array functions, regex parsing, UPDATE/DELETE/MERGE problems, relational division, graph problems in SQL, tournament and scoreboard problems). If you want the earlier gap filled first, say **"Start Phase 2"** for **Aggregation, Joins and Set Operations**.
